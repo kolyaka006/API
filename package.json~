@@ -1,0 +1,11 @@
+{
+  "name": "API-server",
+  "version": "0.0.1",
+  "dependencies": {
+    "restify": "4.0.4"
+  },
+  "engines": {
+    "node": "0.10.38",
+    "npm": "2.11.2"
+  }
+}
