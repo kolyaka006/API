@@ -6,8 +6,9 @@ server.use(restify.fullResponse())
 server.use(restify.bodyParser());
 
 server.post('/endpoint/post_response', function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin','*');
     if(req.params.request == "error") {res.send(204)}
-    if(req.params.request) {res.send(200,{body:"Successfully recieved data from user."})}
+    if(req.params.request) {res.send(200,"Successfully recieved data from user.")}
     res.send(204);
     return next();
 });

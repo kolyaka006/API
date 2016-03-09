@@ -1,7 +1,8 @@
 var restify = require('restify');
 
 var server = restify.createServer();
-
+server.use(restify.acceptParser(server.acceptable));
+server.use(restify.fullResponse())
 server.use(restify.bodyParser());
 
 server.post('/endpoint/post_response', function (req, res, next) {
@@ -43,7 +44,7 @@ server.get('/endpoint/data_set', function (req, res, next) {
 
 
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;
 server.listen(port, function() {
     console.log("Listening on " + port);
 });
