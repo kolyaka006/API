@@ -37,7 +37,7 @@ server.get('/endpoint/data_set', function (req, res, next) {
         }
     }
     else {
-        var plant =  Math.floor(Math.random() * (100)%3);
+        var plant =  Math.floor(Math.random() * (100)%2);
         switch (plant) {
             case 0: res.send(200,{item: "cucumber", type: "vegetable"})
             case 1: res.send(200,{item: "potatoes", type: "vegetable"})
